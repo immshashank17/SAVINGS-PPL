@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Donate for Poor People</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom, #fdfbfb, #ebedee);
+      color: #333;
+    }
+    header {
+      text-align: center;
+      padding: 50px 20px;
+      background: linear-gradient(135deg, #ff9966, #ff5e62);
+      color: white;
+      animation: fadeIn 2s;
+    }
+    header h1 {
+      font-size: 2.5rem;
+    }
+    header p {
+      font-size: 1.2rem;
+    }
+    .trust-badge {
+      background: #28a745;
+      color: white;
+      display: inline-block;
+      padding: 8px 20px;
+      border-radius: 25px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      margin-bottom: 15px;
+      animation: fadeIn 2s;
+    }
+    section {
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .donate-btn, .upi-btn {
+      background: #ff5e62;
+      color: white;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 10px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: transform 0.2s;
+      text-decoration: none;
+      display: inline-block;
+      margin: 8px;
+    }
+    .donate-btn:hover, .upi-btn:hover {
+      transform: scale(1.1);
+      background: #ff9966;
+    }
+    #qr-code {
+      margin-top: 20px;
+    }
+    .about, .contact {
+      background: #f7f7f7;
+      border-radius: 15px;
+      padding: 30px;
+      margin: 20px auto;
+      max-width: 800px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      animation: slideUp 1.5s;
+    }
+    form input, form textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    form button {
+      background: #ff5e62;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    form button:hover {
+      background: #ff9966;
+    }
+    .gallery {
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .gallery h2 {
+      margin-bottom: 20px;
+    }
+    .slideshow-container {
+      position: relative;
+      max-width: 900px;
+      margin: auto;
+      overflow: hidden;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+    .slide {
+      display: none;
+      width: 100%;
+    }
+    .slide img {
+      width: 100%;
+      border-radius: 15px;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes slideUp {
+      from { transform: translateY(50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="trust-badge">
+      🛡️✔️ Verified NGO
+    </div>
+    <h1>Help the Poor & Homeless</h1>
+    <p>Your small help can bring a big change in someone's life</p>
+  </header>
+
+  <section>
+    <h2>Donate Now</h2>
+    <p>Scan the QR code below or use UPI ID:</p>
+    <h3>sudhanshu197400-1@okaxis</h3>
+    <canvas id="qr-code"></canvas>
+    <br>
+    <div>
+      <a href="upi://pay?pa=sudhanshu197400-1@okaxis&pn=Donation&am=50&cu=INR" class="donate-btn">Donate ₹50</a>
+      <a href="upi://pay?pa=sudhanshu197400-1@okaxis&pn=Donation&am=100&cu=INR" class="donate-btn">Donate ₹100</a>
+      <a href="upi://pay?pa=sudhanshu197400-1@okaxis&pn=Donation&am=500&cu=INR" class="donate-btn">Donate ₹500</a>
+      <a href="upi://pay?pa=sudhanshu197400-1@okaxis&pn=Donation&am=1000&cu=INR" class="donate-btn">Donate ₹1000</a>
+    </div>
+    <br>
+    <a href="upi://pay?pa=sudhanshu197400-1@okaxis&pn=Donation&cu=INR" class="upi-btn">Pay with UPI (Custom Amount)</a>
+  </section>
+
+  <section class="about">
+    <h2>About Us</h2>
+    <p>We are dedicated to supporting poor and homeless people living in fields and streets. Your donations help provide food, shelter, and medical care to those in need. Together, we can bring smiles and hope to their lives.</p>
+  </section>
+
+  <section class="gallery">
+    <h2>Our Mission in Pictures</h2>
+    <div class="slideshow-container">
+      <div class="slide fade">
+        <img src="https://images.unsplash.com/photo-1589820296156-2454f3f7f4d4" alt="Poor child in need">
+      </div>
+      <div class="slide fade">
+        <img src="https://images.unsplash.com/photo-1601582581022-4a04e3b8a98a" alt="Helping hand to poor person">
+      </div>
+      <div class="slide fade">
+        <img src="https://images.unsplash.com/photo-1509099836639-18ba1795216d" alt="Homeless family">
+      </div>
+    </div>
+  </section>
+
+  <section class="contact">
+    <h2>Contact Us</h2>
+    <p><strong>Email:</strong> helpingindia.org</p>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea rows="4" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <script>
+    var qr = new QRious({
+      element: document.getElementById('qr-code'),
+      value: 'upi://pay?pa=sudhanshu197400-1@okaxis&pn=Donation&cu=INR',
+      size: 200
+    });
+
+    let slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+      let slides = document.getElementsByClassName("slide");
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) {slideIndex = 1}
+      slides[slideIndex-1].style.display = "block";
+      setTimeout(showSlides, 3000); // Change image every 3 seconds
+    }
+  </script>
+
+</body>
+</html>
